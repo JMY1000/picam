@@ -24,6 +24,7 @@ package uk.co.caprica.picam;
  *
  * @param <T> type of result produced by the picture capture handler
  */
+@SuppressWarnings("unused")
 public interface PictureCaptureHandler<T> {
 
     /**

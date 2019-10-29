@@ -28,8 +28,6 @@ import uk.co.caprica.picam.enums.ImageEffect;
 import uk.co.caprica.picam.enums.Mirror;
 import uk.co.caprica.picam.enums.StereoscopicMode;
 
-import java.awt.geom.Rectangle2D;
-
 import static uk.co.caprica.picam.enums.Encoding.PNG;
 
 /**
@@ -37,6 +35,7 @@ import static uk.co.caprica.picam.enums.Encoding.PNG;
  * <p>
  * This can be used in like a "builder".
  */
+@SuppressWarnings({"unused", "FieldCanBeLocal", "WeakerAccess"})
 public final class CameraConfiguration {
 
     private static final Integer DEFAULT_WIDTH = 2592;
@@ -288,7 +287,7 @@ public final class CameraConfiguration {
     /**
      * Create a new camera based on the configuration.
      *
-     * @return
+     * @return The constructed camera.
      * @throws CameraException if the camera failed to open
      */
     public Camera camera() throws CameraException {

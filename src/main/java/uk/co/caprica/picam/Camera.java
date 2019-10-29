@@ -126,6 +126,7 @@ public final class Camera implements AutoCloseable {
      * @return picture capture handler result
      * @throws CaptureFailedException if an error occurs
      */
+    @SuppressWarnings("UnusedReturnValue")
     public <T> T takePicture(PictureCaptureHandler<T> pictureCaptureHandler) throws CaptureFailedException {
         return takePicture(pictureCaptureHandler ,0);
     }
@@ -180,7 +181,7 @@ public final class Camera implements AutoCloseable {
     /**
      * Private native method used to create the native camera component and all associated native resources.
      *
-     * @param cameraConfiguration
+     * @param cameraConfiguration camera configuration
      * @return <code>true</code> if the native resources were successfully created; <code>false</code> on error
      */
     private native boolean create(CameraConfiguration cameraConfiguration);

@@ -27,6 +27,7 @@ import java.io.FileOutputStream;
  * A simple picture capture handler implementation that saves images to disk with sequentially
  * numbered filenames.
  */
+@SuppressWarnings("WeakerAccess")
 public class SequentialFilePictureCaptureHandler implements PictureCaptureHandler<File> {
 
     // Buffer size, somewhat arbitrary (default is 32k)

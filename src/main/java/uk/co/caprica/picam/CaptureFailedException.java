@@ -22,6 +22,7 @@ package uk.co.caprica.picam;
 /**
  * Exception thrown if a capture was requested but failed for some reason.
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public final class CaptureFailedException extends Exception {
 
     public CaptureFailedException() {

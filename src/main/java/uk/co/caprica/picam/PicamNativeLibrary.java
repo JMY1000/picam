@@ -47,6 +47,7 @@ import java.util.Collections;
  * PicamNativeLibrary.installLibrary("/home/pi");
  * </pre>
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public final class PicamNativeLibrary {
 
     /**
@@ -165,7 +166,7 @@ public final class PicamNativeLibrary {
                 if ("file".equalsIgnoreCase(protocol)) {
                     return installLibraryFromPath(Paths.get(containerUrl.toURI()), installDirectory, overwrite);
                 } else if ("jar".equalsIgnoreCase(protocol)) {
-                    try (FileSystem fs = FileSystems.newFileSystem(containerUrl.toURI(), Collections.<String, Object>emptyMap())) {
+                    try (FileSystem fs = FileSystems.newFileSystem(containerUrl.toURI(), Collections.emptyMap())) {
                         return installLibraryFromPath(fs.getPath(SOURCE_PREFIX), installDirectory, overwrite);
                     }
                 } else {
@@ -183,7 +184,7 @@ public final class PicamNativeLibrary {
     /**
      * Install the native library.
      *
-     * @param sourcePath
+     * @param sourcePath path to the source directory
      * @param installPath full path to the directory where the native library is to be installed
      * @param overwrite <code>true</code> if any existing native library should be replaced; otherwise <code>false</code>
      * @return full path of the installed native library file
